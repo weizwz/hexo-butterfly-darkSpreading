@@ -41,6 +41,6 @@ navCtrl:
     name: nav #容器名称
     index: 1 #如果是class，取第几个
   menu:
-    dark: true || 'fas fa-adjust'
+    dark: '浅色和深色模式转换' || 'fas fa-adjust'
 ```
 重启生效

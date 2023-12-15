@@ -26,11 +26,23 @@ hexo.extend.filter.register(
     // 如果配置开启
     if (!(config && config.enable)) return;
 
+    // 获取菜单
+    const getMenu = function (str) {
+      if (!str) return false;
+      const strArr = str.split('||');
+      if (strArr.length < 2) return false;
+      return {
+        title: strArr[0].trim(),
+        icon: strArr[1].trim()
+      }
+    }
+
     // 集体声明配置项
     const data = {
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
+      dark: getMenu(config.menu.dark)
     }
 
     // 渲染页面
@@ -53,19 +65,45 @@ hexo.extend.filter.register(
       get_layout = `document.getElementById('${data.layout_name}')`;
     }
 
-    //挂载容器脚本
+    // 挂载容器脚本
     var user_info_js = `
       <script data-pjax>
         if (typeof window.navCtrl === 'undefined') {
-          window.dark = {
+          window.navCtrl = {
             ${pluginname}_init: function() {
               var parent_div_git = ${get_layout};
               var item_html = '${temple_html_text}';
-              parent_div_git.insertAdjacentHTML("afterbegin",item_html);
+              parent_div_git.insertAdjacentHTML("beforeend",item_html);
             },
-            hideCover: function() {
-              const $main = document.querySelector("#recommend-post-main");
-              $main.className = 'recommend-post-main recommend-hide';
+            changeDark: function() {
+              const event = window.event || arguments.callee.caller.arguments[0];
+              document.documentElement.style.setProperty('--x', event.clientX + 'px');
+              document.documentElement.style.setProperty('--y', event.clientY + 'px');
+              if(document.startViewTransition) {
+                document.startViewTransition(() => {
+                  window.navCtrl.setTheme();
+                })
+              } else {
+                window.navCtrl.setTheme();
+              }
+            },
+            setTheme: function() {
+              const theme = document.documentElement.getAttribute('data-theme');
+              if (theme === 'light' || !theme) {
+                document.documentElement.setAttribute('data-theme', 'dark')
+                document.documentElement.classList.add('navCtrl-dark')
+                window.localStorage.theme = JSON.stringify({
+                  value: 'dark',
+                  expiry: Date.now() + 2*24*60*60*1000
+                })
+              } else {
+                document.documentElement.setAttribute('data-theme', 'light')
+                document.documentElement.classList.remove('navCtrl-dark')
+                window.localStorage.theme = JSON.stringify({
+                  value: 'light',
+                  expiry: Date.now() + 2*24*60*60*1000
+                })
+              }
             }
           }
         }

@@ -1,1 +1,5 @@
-#dark
+#navCtrl
+  .navCtrl-warpper
+    if dark
+      button#navCtrl-dark.navCtrl-item(title=`${dark.title}` onclick=`navCtrl.changeDark()`)
+        i(class=`fa-fw ${dark.icon}`)
