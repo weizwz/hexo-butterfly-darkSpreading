@@ -16,25 +16,24 @@
   line-height: 1;
   font-size: 0.78em;
   margin-left: 1rem;
+  color: var(--navCtrl-font);
+}
+.navCtrl-separate {
+  display: inline-block;
+  height: 1em;
+  width: 0;
+  vertical-align: middle;
+  margin-left: 0;
+  border-left: double 2px var(--navCtrl-main);
+  border-radius: 2px;
 }
 .navCtrl-item:first-child {
   position: relative;
 }
-.navCtrl-item:first-child::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: -1rem;
-  height: 100%;
-  width: 2px;
-  border-radius: 2px;
-  background: var(--navCtrl-main);
-}
 .navCtrl-item > i {
   color: var(--navCtrl-font);
+  margin-right: 3px;
 }
-
 
 .navCtrl-dark { background: var(--navCtrl-dark); }
 

@@ -6,6 +6,7 @@
 </p>
 
 [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) 主题的扩展，导航栏控制中心
+目前只有黑暗模式和随便逛逛
 
 实际效果展示 [唯之为之的博客](https://weizwz.com) 
 
@@ -24,23 +25,25 @@ npm update hexo-butterfly-navCtrl --save
 ```
 
 ## 使用
-在 `_config.butterfly.yml` 里找到 `darkmode`，然后屏蔽掉默认的暗黑模式
+在 `_config.butterfly.yml` 里找到 `darkmode`，开启暗黑模式，关闭黑暗模式的按钮
 ```yml
 # dark mode
 darkmode:
-  enable: false # 设置为false
+  enable: true # 设置为true
+  button: false # 设置为false
 ```
 
 将以下配置添加到 `_config.butterfly.yml` 或 `_config.yml`。
 ```yml
 navCtrl:
-  enable: true #开关
-  priority: 10 #过滤器优先权 默认10，值越低过滤器越早执行
-  layout: #挂载容器类型
+  enable: true # 开关
+  priority: 10 # 过滤器优先权 默认10，值越低过滤器越早执行
+  layout: # 挂载容器类型
     type: id
-    name: nav #容器名称
-    index: 1 #如果是class，取第几个
-  menu:
-    dark: '浅色和深色模式转换' || 'fas fa-adjust'
+    name: nav # 容器名称
+    index: 1 # 如果是class，取第几个
+  menu: # 如果不想要哪个菜单，注释掉即可
+    dark: '显示模式' || 'fas fa-adjust'
+    random: '随便逛逛 || fas fa-paper-plane'
 ```
 重启生效

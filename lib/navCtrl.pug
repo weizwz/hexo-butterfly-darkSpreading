@@ -1,5 +1,12 @@
 #navCtrl
   .navCtrl-warpper
+    .navCtrl-separate.navCtrl-item
+      |
     if dark
       button#navCtrl-dark.navCtrl-item(title=`${dark.title}` onclick=`navCtrl.changeDark()`)
         i(class=`fa-fw ${dark.icon}`)
+        span=`${dark.title}`
+    if random
+      button#navCtrl-random.navCtrl-item(title=`${random.title}` onclick=`navCtrl.toRandomPost()`)
+        i(class=`fa-fw ${random.icon}`)
+        span=`${random.title}`

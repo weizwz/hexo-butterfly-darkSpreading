@@ -37,12 +37,20 @@ hexo.extend.filter.register(
       }
     }
 
+    // 获取所有文章路径
+    const posts_list = hexo.locals.get('posts').data;
+    let posts_path = [];
+    for (const item of posts_list) {
+      posts_path.push(item.path);
+    }
+
     // 集体声明配置项
     const data = {
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
-      dark: getMenu(config.menu.dark)
+      dark: getMenu(config.menu.dark),
+      random: getMenu(config.menu.random),
     }
 
     // 渲染页面
@@ -104,6 +112,11 @@ hexo.extend.filter.register(
                   expiry: Date.now() + 2*24*60*60*1000
                 })
               }
+            },
+            toRandomPost: function() {
+              var posts_path = "${posts_path}".split(',');
+              var randomPost = posts_path[Math.floor(Math.random() * posts_path.length)];
+              window.recommend.toPost(randomPost);
             }
           }
         }
