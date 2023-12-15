@@ -43,7 +43,7 @@ navctrl:
     name: nav # 容器名称
     index: 1 # 如果是class，取第几个
   menu: # 如果不想要哪个菜单，注释掉即可
-    dark: '显示模式' || 'fas fa-adjust'
+    dark: '显示模式 || fas fa-adjust'
     random: '随便逛逛 || fas fa-paper-plane'
 ```
 重启生效
