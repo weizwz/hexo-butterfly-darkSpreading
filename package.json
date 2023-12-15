@@ -1,7 +1,7 @@
 {
-  "name": "hexo-butterfly-recommend",
-  "version": "1.0.2",
-  "description": "Extension to the hexo-theme-butterfly, recommended components on the homepage",
+  "name": "hexo-butterfly-navctrl",
+  "version": "1.0.1",
+  "description": "Extension to the hexo-theme-butterfly, Navigation bar control center",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weizwz/hexo-butterfly-recommend.git"
+    "url": "git+https://github.com/weizwz/hexo-butterfly-navctrl.git"
   },
   "keywords": [
     "blog",
@@ -23,9 +23,9 @@
     "butterfly",
     "theme-butterfly",
     "hexo-theme-butterfly",
-    "recommend",
-    "butterfly-recommend",
-    "hexo-butterfly-recommend",
+    "navctrl",
+    "butterfly-navctrl",
+    "hexo-butterfly-navctrl",
     "plugin"
   ],
   "dependencies": {
@@ -34,7 +34,7 @@
   "author": "weizwz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/weizwz/hexo-butterfly-recommend/issues"
+    "url": "https://github.com/weizwz/hexo-butterfly-navctrl/issues"
   },
-  "homepage": "https://github.com/weizwz/hexo-butterfly-recommend#readme"
+  "homepage": "https://github.com/weizwz/hexo-butterfly-navctrl#readme"
 }
