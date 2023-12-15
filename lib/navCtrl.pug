@@ -1,12 +1,12 @@
-#navCtrl
-  .navCtrl-warpper
-    .navCtrl-separate.navCtrl-item
+#navctrl
+  .navctrl-warpper
+    .navctrl-separate.navctrl-item
       |
     if dark
-      button#navCtrl-dark.navCtrl-item(title=`${dark.title}` onclick=`navCtrl.changeDark()`)
+      button#navctrl-dark.navctrl-item(title=`${dark.title}` onclick=`navctrl.changeDark()`)
         i(class=`fa-fw ${dark.icon}`)
         span=`${dark.title}`
     if random
-      button#navCtrl-random.navCtrl-item(title=`${random.title}` onclick=`navCtrl.toRandomPost()`)
+      button#navctrl-random.navctrl-item(title=`${random.title}` onclick=`navctrl.toRandomPost()`)
         i(class=`fa-fw ${random.icon}`)
         span=`${random.title}`

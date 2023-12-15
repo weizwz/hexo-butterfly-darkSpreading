@@ -1,52 +1,52 @@
 :root {
-  --navCtrl-main: var(--font-color);
-  --navCtrl-font: var(--font-color);
-  --navCtrl-dark: #18171d;
+  --navctrl-main: var(--font-color);
+  --navctrl-font: var(--font-color);
+  --navctrl-dark: #18171d;
 }
 /* 兼容性修改 */
 
-#navCtrl {
+#navctrl {
   position: relative;
   margin-left: 1.2rem;
 }
-.navCtrl-warpper {
+.navctrl-warpper {
   display: inline;
 }
-.navCtrl-item {
+.navctrl-item {
   line-height: 1;
   font-size: 0.78em;
   margin-left: 1rem;
-  color: var(--navCtrl-font);
+  color: var(--navctrl-font);
 }
-.navCtrl-separate {
+.navctrl-separate {
   display: inline-block;
   height: 1em;
   width: 0;
   vertical-align: middle;
   margin-left: 0;
-  border-left: double 2px var(--navCtrl-main);
+  border-left: double 2px var(--navctrl-main);
   border-radius: 2px;
 }
-.navCtrl-item:first-child {
+.navctrl-item:first-child {
   position: relative;
 }
-.navCtrl-item > i {
-  color: var(--navCtrl-font);
+.navctrl-item > i {
+  color: var(--navctrl-font);
   margin-right: 3px;
 }
-#nav.hide-menu #navCtrl {
+#nav.hide-menu #navctrl {
   margin-left: .2rem;
 }
-#nav.hide-menu .navCtrl-item {
+#nav.hide-menu .navctrl-item {
   font-size: 1em;
 }
-#nav.hide-menu .navCtrl-item > span {
+#nav.hide-menu .navctrl-item > span {
   display: none;
 }
-#nav.hide-menu .navCtrl-separate {
+#nav.hide-menu .navctrl-separate {
   display: none;
 }
-.navCtrl-dark { background: var(--navCtrl-dark); }
+.navctrl-dark { background: var(--navctrl-dark); }
 
 ::view-transition-old(*) {
   animation: none;

@@ -1,8 +1,8 @@
-# hexo-butterfly-navCtrl
+# hexo-butterfly-navctrl
 <p>
-  <a href="https://www.npmjs.com/package/hexo-butterfly-navCtrl?activeTab=versions"><img src="https://img.shields.io/npm/v/hexo-butterfly-navCtrl?color=409eff" alt="Build Status"></a>
-  <a href="https://www.npmjs.com/package/hexo-butterfly-navCtrl"><img src="https://img.shields.io/npm/dm/hexo-butterfly-navCtrl" alt="Coverage Status"></a>
-  <a href="https://mit-license.org/"><img src="https://img.shields.io/github/license/weizwz/hexo-butterfly-navCtrl" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/hexo-butterfly-navctrl?activeTab=versions"><img src="https://img.shields.io/npm/v/hexo-butterfly-navctrl?color=409eff" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/hexo-butterfly-navctrl"><img src="https://img.shields.io/npm/dm/hexo-butterfly-navctrl" alt="Coverage Status"></a>
+  <a href="https://mit-license.org/"><img src="https://img.shields.io/github/license/weizwz/hexo-butterfly-navctrl" alt="Downloads"></a>
 </p>
 
 [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) 主题的扩展，导航栏控制中心
@@ -16,12 +16,12 @@
 
 ## 安装
 ```shell
-npm i hexo-butterfly-navCtrl --save
+npm i hexo-butterfly-navctrl --save
 ```
 
 ## 升级
 ```shell
-npm update hexo-butterfly-navCtrl --save
+npm update hexo-butterfly-navctrl --save
 ```
 
 ## 使用

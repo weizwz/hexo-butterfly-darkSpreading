@@ -1,6 +1,6 @@
 'use strict';
 // 全局声明插件代号
-const pluginname = 'hexo_butterfly_navCtrl';
+const pluginname = 'hexo_butterfly_navctrl';
 // 全局声明依赖
 const pug = require('pug');
 const path = require('path');
@@ -8,11 +8,11 @@ const fs = require('hexo-fs');
 const { version } = require('./package.json');
 
 // 注册静态资源
-hexo.extend.generator.register('navCtrl_lib', () => [
+hexo.extend.generator.register('navctrl_lib', () => [
   {
-    path: 'css/navCtrl.css',
+    path: 'css/navctrl.css',
     data: function () {
-      return fs.createReadStream(path.resolve(path.resolve(__dirname, './lib'), 'navCtrl.css'));
+      return fs.createReadStream(path.resolve(path.resolve(__dirname, './lib'), 'navctrl.css'));
     }
   }
 ])
@@ -54,7 +54,7 @@ hexo.extend.filter.register(
     }
 
     // 渲染页面
-    const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/navCtrl.pug'), data);
+    const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/navctrl.pug'), data);
 
     //注入容器声明
     var get_layout;
@@ -76,8 +76,8 @@ hexo.extend.filter.register(
     // 挂载容器脚本
     var user_info_js = `
       <script data-pjax>
-        if (typeof window.navCtrl === 'undefined') {
-          window.navCtrl = {
+        if (typeof window.navctrl === 'undefined') {
+          window.navctrl = {
             ${pluginname}_init: function() {
               var parent_div_git = ${get_layout};
               var item_html = '${temple_html_text}';
@@ -89,24 +89,24 @@ hexo.extend.filter.register(
               document.documentElement.style.setProperty('--y', event.clientY + 'px');
               if(document.startViewTransition) {
                 document.startViewTransition(() => {
-                  window.navCtrl.setTheme();
+                  window.navctrl.setTheme();
                 })
               } else {
-                window.navCtrl.setTheme();
+                window.navctrl.setTheme();
               }
             },
             setTheme: function() {
               const theme = document.documentElement.getAttribute('data-theme');
               if (theme === 'light' || !theme) {
                 document.documentElement.setAttribute('data-theme', 'dark')
-                document.documentElement.classList.add('navCtrl-dark')
+                document.documentElement.classList.add('navctrl-dark')
                 window.localStorage.theme = JSON.stringify({
                   value: 'dark',
                   expiry: Date.now() + 2*24*60*60*1000
                 })
               } else {
                 document.documentElement.setAttribute('data-theme', 'light')
-                document.documentElement.classList.remove('navCtrl-dark')
+                document.documentElement.classList.remove('navctrl-dark')
                 window.localStorage.theme = JSON.stringify({
                   value: 'light',
                   expiry: Date.now() + 2*24*60*60*1000
@@ -120,7 +120,7 @@ hexo.extend.filter.register(
             }
           }
         }
-        window.navCtrl.${pluginname}_init();
+        window.navctrl.${pluginname}_init();
       </script>`;
 
     // 此处利用挂载容器实现了二级注入
@@ -130,7 +130,7 @@ hexo.extend.filter.register(
     const css = hexo.extend.helper.get('css').bind(hexo);
     // const js = hexo.extend.helper.get('js').bind(hexo)
     hexo.extend.injector.register('head_end', () => {
-      return css(`/css/navCtrl.css?v=${version}`);
+      return css(`/css/navctrl.css?v=${version}`);
     }, 'default')
   },
   (hexo.config.recommend || hexo.config.theme_config.recommend)['priority'] || 10
