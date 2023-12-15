@@ -22,7 +22,7 @@ hexo.extend.filter.register(
   'after_generate', 
   function () {
     // 获取整体的配置项名称
-    const config = hexo.config.navCtrl || hexo.theme.config.navCtrl;
+    const config = hexo.config.navctrl || hexo.theme.config.navctrl;
     // 如果配置开启
     if (!(config && config.enable)) return;
 

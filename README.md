@@ -35,7 +35,7 @@ darkmode:
 
 将以下配置添加到 `_config.butterfly.yml` 或 `_config.yml`。
 ```yml
-navCtrl:
+navctrl:
   enable: true # 开关
   priority: 10 # 过滤器优先权 默认10，值越低过滤器越早执行
   layout: # 挂载容器类型
