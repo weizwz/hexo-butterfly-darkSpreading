@@ -34,7 +34,18 @@
   color: var(--navCtrl-font);
   margin-right: 3px;
 }
-
+#nav.hide-menu #navCtrl {
+  margin-left: .2rem;
+}
+#nav.hide-menu .navCtrl-item {
+  font-size: 1em;
+}
+#nav.hide-menu .navCtrl-item > span {
+  display: none;
+}
+#nav.hide-menu .navCtrl-separate {
+  display: none;
+}
 .navCtrl-dark { background: var(--navCtrl-dark); }
 
 ::view-transition-old(*) {
