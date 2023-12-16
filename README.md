@@ -14,6 +14,9 @@
 
 参与调试/自定义修改/开发butterfly主题插件，可配合 [butterfly-plug](https://github.com/weizwz/butterfly-plug) 项目示例，欢迎 `⭐Star`。
 
+## 文档
+参考 [hexo-butterfly-navctrl 使用说明](https://weizwz.com/posts/c4be1e8f.html)
+
 ## 安装
 ```shell
 npm i hexo-butterfly-navctrl --save
