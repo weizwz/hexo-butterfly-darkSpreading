@@ -49,8 +49,9 @@ hexo.extend.filter.register(
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
-      dark: getMenu(config.menu.dark),
-      random: getMenu(config.menu.random),
+      menu_display: config.menu.display || '',
+      menu_dark: getMenu(config.menu.dark),
+      menu_random: getMenu(config.menu.random),
     }
 
     // 渲染页面

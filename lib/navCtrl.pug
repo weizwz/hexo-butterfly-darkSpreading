@@ -2,11 +2,15 @@
   .navctrl-warpper
     .navctrl-separate.navctrl-item
       |
-    if dark
-      button#navctrl-dark.navctrl-item(title=`${dark.title}` onclick=`navctrl.changeDark()`)
-        i(class=`fa-fw ${dark.icon}`)
-        span=`${dark.title}`
-    if random
-      button#navctrl-random.navctrl-item(title=`${random.title}` onclick=`navctrl.toRandomPost()`)
-        i(class=`fa-fw ${random.icon}`)
-        span=`${random.title}`
+    if menu_dark
+      button#navctrl-dark(class=`navctrl-item ${menu_display}` title=`${menu_dark.title}` onclick=`navctrl.changeDark()`)
+        if (menu_display !== 'txt')
+          i(class=`fa-fw ${menu_dark.icon}`)
+        if (menu_display !== 'icon')
+          span=`${menu_dark.title}`
+    if menu_random
+      button#navctrl-random(class=`navctrl-item ${menu_display}` title=`${menu_random.title}` onclick=`navctrl.toRandomPost()`)
+        if (menu_display !== 'txt')
+          i(class=`fa-fw ${menu_random.icon}`)
+        if (menu_display !== 'icon')
+          span=`${menu_random.title}`
