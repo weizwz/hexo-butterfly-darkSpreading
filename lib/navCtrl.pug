@@ -14,3 +14,12 @@
           i(class=`fa-fw ${menu_random.icon}`)
         if (menu_display !== 'icon')
           span=`${menu_random.title}`
+    if menu_link
+      - var values = menu_link;
+      each val in values
+        a(class=`navctrl-item ${menu_display}` title=`${val.title}` href=`${val.href}` target="_blank")
+          if (menu_display !== 'txt')
+            i(class=`fa-fw ${val.icon}`)
+          if (menu_display !== 'icon')
+            span=`${val.title}`
+

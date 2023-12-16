@@ -46,5 +46,8 @@ navctrl:
     display: ''  # 默认文字+图标; txt 仅文字; icon 仅图标
     dark: '显示模式 || fas fa-adjust'
     random: '随便逛逛 || fas fa-paper-plane'
+    link: # 添加链接，支持多个
+      # - '我的博客 || fas fa-blog || https://weizwz.com/'
+      # - '关注我 || fas fa-brands fa-github || https://github.com/weizwz'
 ```
 重启生效

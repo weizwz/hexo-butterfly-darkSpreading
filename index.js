@@ -26,17 +26,6 @@ hexo.extend.filter.register(
     // 如果配置开启
     if (!(config && config.enable)) return;
 
-    // 获取菜单
-    const getMenu = function (str) {
-      if (!str) return false;
-      const strArr = str.split('||');
-      if (strArr.length < 2) return false;
-      return {
-        title: strArr[0].trim(),
-        icon: strArr[1].trim()
-      }
-    }
-
     // 获取所有文章路径
     const posts_list = hexo.locals.get('posts').data;
     let posts_path = [];
@@ -52,6 +41,7 @@ hexo.extend.filter.register(
       menu_display: config.menu.display || '',
       menu_dark: getMenu(config.menu.dark),
       menu_random: getMenu(config.menu.random),
+      menu_link: getLink(config.menu.link)
     }
 
     // 渲染页面
@@ -143,3 +133,29 @@ hexo.extend.filter.register(
   (hexo.config.recommend || hexo.config.theme_config.recommend)['priority'] || 10
 )
 
+
+// 获取菜单
+function getMenu(str) {
+  if (!str) return false;
+  const strArr = str.split('||');
+  if (strArr.length < 2) return false;
+  return {
+    title: strArr[0].trim(),
+    icon: strArr[1].trim()
+  }
+}
+
+// 获取链接
+function getLink(links) {
+  if (!links || !Array.isArray(links)) return false;
+  const _links = [];
+  for (const item of links) {
+    const linkArr = item.split('||');
+    _links.push({
+      title: linkArr[0].trim(),
+      icon: linkArr[1].trim(),
+      href: linkArr[2].trim(),
+    })
+  }
+  return _links;
+}
