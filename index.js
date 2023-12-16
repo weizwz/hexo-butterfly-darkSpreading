@@ -79,6 +79,8 @@ hexo.extend.filter.register(
         if (typeof window.navctrl === 'undefined') {
           window.navctrl = {
             ${pluginname}_init: function() {
+              const $navctrl = document.querySelector('#navctrl');
+              if($navctrl) return;
               var parent_div_git = ${get_layout};
               var item_html = '${temple_html_text}';
               parent_div_git.insertAdjacentHTML("beforeend",item_html);
@@ -119,6 +121,10 @@ hexo.extend.filter.register(
               window.recommend.toPost(randomPost);
             }
           }
+          console.log(
+            "%c plugin ⭐ hexo_butterfly_navctrl ⭐ https://github.com/weizwz/hexo-butterfly-navctrl ",
+            "color: #fff; padding:3px; font-size:12px; background: linear-gradient(90deg, #358bff, #1eebeb);"
+          )
         }
         window.navctrl.${pluginname}_init();
       </script>`;
