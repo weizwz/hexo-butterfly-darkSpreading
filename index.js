@@ -106,6 +106,10 @@ hexo.extend.filter.register(
                 })
               }
             },
+            toPost: function(href) {
+              if (typeof pjax !== 'undefined') pjax.loadUrl('/' + href);
+              else window.location.href = window.location.origin + (href.charAt(0) === '/' ? '' : '/') + href;
+            },
             toRandomPost: function() {
               var posts_path = "${posts_path}".split(',');
               var randomPost = posts_path[Math.floor(Math.random() * posts_path.length)];
