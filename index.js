@@ -109,11 +109,11 @@ hexo.extend.filter.register(
             toRandomPost: function() {
               var posts_path = "${posts_path}".split(',');
               var randomPost = posts_path[Math.floor(Math.random() * posts_path.length)];
-              window.recommend.toPost(randomPost);
+              window.navctrl.toPost(randomPost);
             }
           }
           console.log(
-            "%c plugin ⭐ hexo_butterfly_navctrl ⭐ https://github.com/weizwz/hexo-butterfly-navctrl ",
+            "%c plugin ⭐ ${pluginname} ⭐ https://github.com/weizwz/hexo-butterfly-navctrl ",
             "color: #fff; padding:3px; font-size:12px; background: linear-gradient(90deg, #358bff, #1eebeb);"
           )
         }
@@ -130,7 +130,7 @@ hexo.extend.filter.register(
       return css(`/css/navctrl.css?v=${version}`);
     }, 'default')
   },
-  (hexo.config.recommend || hexo.config.theme_config.recommend)['priority'] || 10
+  (hexo.config.navctrl || hexo.config.theme_config.navctrl)['priority'] || 10
 )
 
 
