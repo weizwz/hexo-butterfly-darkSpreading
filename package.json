@@ -1,6 +1,6 @@
 {
   "name": "hexo-butterfly-navctrl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Extension to the hexo-theme-butterfly, Navigation bar control center",
   "main": "index.js",
   "scripts": {
